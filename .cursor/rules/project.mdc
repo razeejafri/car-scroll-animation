@@ -1,0 +1,14 @@
+---
+alwaysApply: true
+---
+- Stack: Next.js App Router, TypeScript, Tailwind CSS v4, GSAP via @gsap/react useGSAP.
+- All GSAP code lives in src/hooks/useHeroAnimation.ts. Components are presentational.
+- Mark any component using refs or GSAP with 'use client'.
+- Animate only transform and opacity. clip-path is allowed for the green reveal only.
+- No scroll event listeners. No layout reads (offsetWidth, getBoundingClientRect) inside onUpdate.
+  Measure in ScrollTrigger onRefresh and cache in variables.
+- Use useGSAP with a scope ref so strict-mode double effects clean up correctly.
+- Use gsap.matchMedia for responsive values and prefers-reduced-motion.
+- Small, readable components. No unused code, no magic numbers (put them in src/lib/constants.ts).
+- Car image: /public/car.png — transparent PNG, top-down view. Do not replace.
+- SCROLL_LENGTH, CAR_EDGE_RATIO, CARD_REVEAL_SPAN come from src/lib/constants.ts.
